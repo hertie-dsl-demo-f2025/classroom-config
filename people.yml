@@ -1,32 +1,38 @@
-# This cohort's own instructors/TAs - the SSOT for their GitHub push access (this cohort's
-# own instructors team, plus a course-org instructors-TAG team scoped to this year's
-# content repos and the central .github repo so they can use the dispatch buttons).
+# This cohort's own instructors/TAs - the SSOT for their GitHub push access (this
+# cohort's own instructors team + a course-org instructors-<tag> team scoped to this
+# year's content repos, plus the central .github repo for the central dispatch
+# buttons).
 #
-# This file ALSO supplies the cohort website's staff cards: name + title + photo + url, per
-# entry. (The COURSE org's dsl-course.yml people: block supplies cards for the optional
-# PUBLIC course site instead, and declares course_admins - see that file.)
+# This file ALSO supplies the COHORT website's staff cards (name/title/photo/url) -
+# see this dataset's README, "What this stands up". The course org's dsl-course.yml
+# people: block supplies cards for the optional PUBLIC course site instead.
 #
-# `github_handle` is the only required field. `start`/`end` (optional ISO dates) auto-rotate
-# access, so a TA's access lapses on the end date with no manual removal. A card is rendered
-# only for an entry that has a `name` AND is active today.
+# `photo` takes EITHER an absolute URL on a host that ALLOWS HOTLINKING (GitHub
+# avatars always do), OR a site-relative path to an image committed into this
+# cohort's site repo under `_images/pp/`. Institutional profile sites often return
+# 403 to off-site requests, which renders as a broken image - host those locally.
 #
-# `photo` takes EITHER an absolute URL on a host that allows hotlinking, OR a site-relative
-# path to an image committed into this cohort's site repo under `_images/pp/` (that dir is
-# served - `include: ['_images']` in the site's _config.yml - and no sync ever rewrites it).
-# The two entries below demonstrate one of each.
+# A card renders only for an entry that has a `name` AND is active today, so the
+# start/end window below governs the card as well as the access.
 people:
   instructors:
-    # photo by REMOTE URL.
-    - github_handle: "henrycgbaker"
-      name: "Henry Baker"
-      title: "Instructor"
-      photo: "https://github.com/henrycgbaker.png"
-      url: "https://www.hertie-school.org/en/who-we-are/profile/person/baker"
+    - github_handle: "LynnKaack"
+      name: "Prof. Lynn Kaack, PhD"
+      title: "Assistant Professor of Computer Science and Public Policy"
+      photo: "https://github.com/LynnKaack.png"
+      url: "https://www.hertie-school.org/de/research/faculty-and-researchers/profile/person/kaack"
   teaching_assistants:
-    # Same person, second role: one GitHub grant (team membership is a set), but a separate
-    # card. photo by LOCAL PATH into this site repo.
+    - github_handle: "chiara-fb"
+      name: "Chiara Fusar Bassini"
+      title: "PhD candidate, Data Science Lab"
+      photo: "https://github.com/chiara-fb.png"
+      url: "https://www.hertie-school.org/en/who-we-are/profile/person/fusar-bassini"
+      start: "2026-08-01"
+      end: "2027-01-31"
     - github_handle: "henrycgbaker"
       name: "Henry Baker"
-      title: "Teaching Assistant"
-      photo: "/_images/pp/henrycgbaker.jpg"
+      title: "Research Engineer & Data Scientist"
+      photo: "/_images/pp/henrycgbaker.jpg"   # the other form: local file in the site repo
       url: "https://www.hertie-school.org/en/who-we-are/profile/person/baker"
+      start: "2026-08-01"
+      end: "2027-01-31"
