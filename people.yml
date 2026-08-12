@@ -1,22 +1,32 @@
-# This cohort's instructors/TAs - the single source of truth for GitHub push
-# access to this cohort's own team AND a course-org instructors-<tag> team (scoped
-# to this year's content repos, plus the central .github repo for the central
-# dispatch buttons). Course admins are declared at the course-org level instead (see
-# that org's .github/dsl-course.yml). Uncomment and fill what you want:
+# This cohort's own instructors/TAs - the SSOT for their GitHub push access (this cohort's
+# own instructors team, plus a course-org instructors-TAG team scoped to this year's
+# content repos and the central .github repo so they can use the dispatch buttons).
 #
-# people:
-#   instructors:
-#     - github_handle: "janedoe"      # required - grants the `instructors` team
-#       name: "Prof. Jane Doe"        # optional, display only
-#       title: "Professor of ..."
-#       photo: "https://.../jane.jpg"
-#       url: "https://.../profile/jane"
-#       start: "2026-09-01"           # optional - no start = active immediately
-#       end: "2027-01-31"             # optional - no end = indefinite
-#   teaching_assistants:
-#     - github_handle: "anOther"
-#       name: "..."                  # optional, display only
-#       photo: "https://.../ta.jpg"
-#       url: "https://.../profile/ta"
-#       start: "2026-09-01"
-#       end: "2027-01-31"
+# This file ALSO supplies the cohort website's staff cards: name + title + photo + url, per
+# entry. (The COURSE org's dsl-course.yml people: block supplies cards for the optional
+# PUBLIC course site instead, and declares course_admins - see that file.)
+#
+# `github_handle` is the only required field. `start`/`end` (optional ISO dates) auto-rotate
+# access, so a TA's access lapses on the end date with no manual removal. A card is rendered
+# only for an entry that has a `name` AND is active today.
+#
+# `photo` takes EITHER an absolute URL on a host that allows hotlinking, OR a site-relative
+# path to an image committed into this cohort's site repo under `_images/pp/` (that dir is
+# served - `include: ['_images']` in the site's _config.yml - and no sync ever rewrites it).
+# The two entries below demonstrate one of each.
+people:
+  instructors:
+    # photo by REMOTE URL.
+    - github_handle: "henrycgbaker"
+      name: "Henry Baker"
+      title: "Instructor"
+      photo: "https://github.com/henrycgbaker.png"
+      url: "https://www.hertie-school.org/en/who-we-are/profile/person/baker"
+  teaching_assistants:
+    # Same person, second role: one GitHub grant (team membership is a set), but a separate
+    # card. photo by LOCAL PATH into this site repo.
+    - github_handle: "henrycgbaker"
+      name: "Henry Baker"
+      title: "Teaching Assistant"
+      photo: "/_images/pp/henrycgbaker.jpg"
+      url: "https://www.hertie-school.org/en/who-we-are/profile/person/baker"
