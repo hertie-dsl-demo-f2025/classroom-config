@@ -1,110 +1,49 @@
-# This cohort's schedule + auto-release plan. Edit here (GitHub web UI is fine - no CLI).
-# Everything is optional: anything you leave out is synthesised (semester start from the
-# fYYYY tag; website exams at weeks 8 & 15) or simply not scheduled. Uncomment and fill
-# what you want. Times are Europe/Berlin unless you set `timezone:` or give an explicit
-# offset; the Scheduled release cron runs hourly, so times are honoured to the hour.
+# This cohort's schedule + auto-release plan. Edit here. 
 #
-# Changing a date later? Just commit the edit to this file on main - the GitHub web UI
-# is the recommended way (or edit a local clone, commit, push). The hourly cron reads
+# Times are Europe/Berlin unless you set `timezone:`; the Scheduled release cron runs hourly, so times are honoured to the hour.
+#
+# Each block encodes BEHAVIOUR:
+#   releases:     entries that DEPLOY materials (course org -> this cohort org)
+#   assignments:  each assignment's handout / due / grading lifecycle
+#   events:       display-only calendar rows - nothing deploys
+#
+# Changing a date later? Just commit the edit to this file on main; the hourly cron reads
 # whatever is on main at each tick, so the change simply takes effect within the hour.
 # Only already-fired ONE-SHOT actions don't rewind: a release already shipped stays
 # shipped, and a snapshot/autograde that already ran needs its marker deleted to redo.
+#
+# What follows is a SKELETON: uncomment and fill what you want. For a full worked term -
+# a real release plan, a group project, exams - see `schedule.yml.sample`.
 
-# timezone: Europe/Berlin              # optional - how the naive datetimes below are read
+# timezone: Europe/Berlin           
+# semester_start: 
+# semester_end: 
 
-# ---------------------------------------------------------------------------
-# materials_releases: the term CALENDAR and the AUTO-RELEASE plan, in one block. Each
-# entry is a label (any name you like - session_2, lab_1, bonus-dataset) mapping to a
-# `calendar_event:` datetime - when the thing HAPPENS, which is what the cohort site's
-# schedule shows - and, optionally, actions. Actions fire at the calendar_event unless a
-# deploy carries its own `deploy_datetime:`. The hourly Scheduled release cron does the
-# firing (idempotent - safe to re-run). Sources are always read from the COURSE org;
-# destinations always written to THIS cohort org.
-# ---------------------------------------------------------------------------
-# materials_releases:
+# releases:                         
+#   lecture-1:                      
+#     event_datetime:               # what the site's schedule shows
+#     title:                        # OPTIONAL (default: prettified label)
+#     tbc: false                    # OPTIONAL: site marks it "(TBC)" next to the event_datetime (default: false)
+#     deploy:                       
+#       - course_source_repo:       # REQUIRED 
+#         course_source_path:       # REQUIRED - folder or file to copy
+#         cohort_dest_repo:         # default: materials
+#         cohort_dest_path:         # default: same as course_source_path
+#         deploy_datetime:          # default: the event_datetime
 #
-#   lecture_02:                         # MINIMAL - the recommended shape. Only source_repo
-#     calendar_event: 2025-09-15T10:00  # + source_path are required; this lands at
-#     deploy:                             # materials/lectures/02_intro at class time.
-#       - {source_repo: course-materials-f2025, source_path: lectures/02_intro}
-#
-#   session_2:                          # FULL - every field spelled out, for when a
-#     calendar_event: 2025-09-15T10:00   # default doesn't fit. (Paths are relative to
-#                                          # their repo: source_path inside source_repo,
-#                                          # dest_path inside dest_repo.)
-#     deploy:                           # copy one or more paths: course repo -> cohort repo
-#       - source_repo: course-materials-f2025     # REQUIRED - repo in the COURSE org
-#         source_path: lectures/02_intro          # REQUIRED - folder or file to copy
-#         dest_repo: materials                    # repo in THIS cohort org (default: materials)
-#         dest_path: lectures/02_intro            # where to put it (default: same as source_path)
-#         deploy_datetime: 2025-09-15T09:00     # ship THIS copy an hour before the
-#                                                 # class (default: the calendar_event)
-#       - source_repo: course-materials-f2025
-#         source_path: readings/02_intro          # no deploy_datetime -> out at class time
-#
-#   project-clinic:                     # NO actions -> a display-only calendar event:
-#     calendar_event: 2025-11-17T10:00  # nothing is released, the site simply shows it
-#     title: Project clinic             # OPTIONAL row label (default: prettified label)
-#     tbc: true                         # OPTIONAL: a provisional date - fires as normal,
-#                                       # but the site marks it "(TBC)"
-#
-#   guest-lecture:                      # `calendar_event: tbc` = not even a sketch yet:
-#     calendar_event: tbc               # the site shows a TBC row (sorted end-of-term);
-#     title: Guest lecture              # nothing can fire until you set a real date
-#
-#   lab_1:                              # a lab is just another entry - no special section
-#     calendar_event: 2025-09-17T10:00
-#     deploy:
-#       - source_repo: course-materials-f2025
-#         source_path: labs/01_setup
-#         dest_repo: materials
-#         # dest_path omitted -> mirrors source_path (labs/01_setup)
-#
-#   bonus-dataset:                      # a one-off that isn't a numbered teaching session
-#     calendar_event: 2025-10-20T09:30
-#     deploy:
-#       - source_repo: course-materials-f2025
-#         source_path: datasets/housing.csv
-#         dest_repo: materials
-#         dest_path: data/housing.csv
-#
-#   (Assignments need NO entry here: their whole lifecycle - handout, due date, grading -
-#   lives under `assignments:` below. Grading fires automatically, ONCE, at each
-#   assignment's `grading_deadline`.)
+# assignments:                      
+#   assignment-1:
+#     course_source_repo:           # REQUIRED 
+#     cohort_dest_repo:             # OPTIONAL (default: the slug (here would be assignment-1))
+#     handout_datetime:             # Omit  if you hand out via the manual "Release assignment" button (which auto-records it here for you)
+#     due_datetime:                 # a bare date -> end of that day (23:59:59)
+#     grading_datetime:             # OPTIONAL: snapshot freezes + autograder fires (default: due_datetime). Not shown to students
+#     type: group                   # OPTIONAL: group | individual (also settable in the template's grading.yml; default: individual)
+#     max_team_size:                # OPTIONAL, group only: the welcome "Join team" flow  refuses a member beyond this (default: 5)
 
-# ---------------------------------------------------------------------------
-# The rest is for DISPLAY (website) and GRADING - not the release plan above.
-# ---------------------------------------------------------------------------
-# semester_start: 2025-09-07         # YYYY-MM-DD
-# semester_end: 2025-12-18
-#
-# assignments:                          # each assignment's WHOLE lifecycle, keyed by slug
-#   assignment-1:                       # (repo name minus the -f2025 tag)
-#     handout: 2025-09-22T09:00       # when to provision one repo per student (or per
-#                                       # team) from the assignment-1-f2025 template.
-#                                       # Without it the schedule never releases this
-#                                       # assignment - omit ONLY if you hand out via the
-#                                       # manual "Release assignment" button
-#     due: 2025-10-13T23:59          # a bare date -> END of that day (23:59:59)
-#     grading_deadline: 2025-10-15    # OPTIONAL: when the submission snapshot freezes AND
-#                                       # the autograder fires (once). Not shown to students.
-#                                       # Defaults to `due`.
-#   assignment-2:
-#     due: 2025-11-10
-#   assignment-4-project:
-#     handout: 2025-10-20T14:00
-#     due: 2025-11-27
-#     type: group                       # OPTIONAL: group | individual (can also be set
-#                                       # in the template's grading.yml; default: individual)
-#     max_team_size: 4                  # OPTIONAL, group assignments: the welcome repo's
-#                                       # "Join team" flow refuses a member beyond this
-#                                       # (default when unset: 5)
-#
-# exams:                                # `date` is a whole day, OR a full datetime when
-#   - name: MidTerm Exam                # you know the start time
-#     date: 2025-11-03                # bare date -> the website shows 09:00
-#     tbc: true                         # OPTIONAL: provisional - shown with a "(TBC)" marker
-#   - name: Final Exam
-#     date: 2025-12-15T14:00          # real start time, shown as given
-#   - name: Resit Exam
-#     date: tbc                         # no date at all yet -> the site shows a TBC row
+# events:                           # DISPLAY-ONLY calendar rows - nothing deploys
+#   final-exam:
+#     type:                         # OPTIONAL: exam | special_event (default:  special_event). `exam` colours the row as an exam
+#     title:                        # OPTIONAL row label (default: prettified label)
+#     event_datetime:               # bare date -> whole day;
+#                                   # `event_datetime: tbc` -> an undated TBC row
