@@ -1,2 +1,2 @@
-student_id,hertie_email,name,github_handle,github_id,section,enrol_code,role
-000001,student@example.edu,Example Student,,,A,,enrolled
+hertie_email,name,github_handle,github_id,enrol_code,role
+student@example.edu,Example Student,,,,enrolled
