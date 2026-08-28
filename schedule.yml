@@ -249,6 +249,7 @@ releases:
 assignments:
 
   assignment-1:
+    title: Linear regression from scratch
     course_source_repo: assignment-1-f2026
     handout_datetime: 2025-09-23T14:00
     due_datetime: 2025-10-14T23:59
@@ -262,6 +263,7 @@ assignments:
     type: individual
 
   assignment-3-project:
+    title: Group project
     course_source_repo: assignment-3-project-f2026
     handout_datetime: 2025-10-21T14:00
     due_datetime: 2025-11-28T23:59
