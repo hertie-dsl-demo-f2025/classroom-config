@@ -9,6 +9,9 @@
 semester_start: 2025-09-09
 semester_end: 2025-12-19
 
+enrolment:
+  send_codes_datetime: 2025-09-09T08:00   # REQUIRED - send_until defaults to semester_start + 2 weeks
+
 releases:
 
   session-01:
