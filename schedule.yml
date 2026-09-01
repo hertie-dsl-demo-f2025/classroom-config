@@ -9,9 +9,6 @@
 semester_start: 2025-09-09
 semester_end: 2025-12-19
 
-enrolment:
-  send_codes_datetime: 2025-09-09T08:00   # REQUIRED - send_until defaults to semester_start + 2 weeks
-
 releases:
 
   session-01:
@@ -112,4 +109,3 @@ releases:
 # nobody has claimed a roster row in this demonstration cohort - so a scheduled handout
 # would fail every hour with "no onboarded enrolled students". The sibling cohort
 # hertie-dsl-demo-f2026 shows the full assignment lifecycle instead.
-
