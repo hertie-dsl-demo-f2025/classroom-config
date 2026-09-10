@@ -8,6 +8,8 @@
 
 semester_start: 2025-09-09
 semester_end: 2025-12-19
+archive:
+  date: 2027-09-01   # pinned 2026-09-10: the past demo cohort stays live for inspection
 
 releases:
 
