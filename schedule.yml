@@ -8,9 +8,6 @@
 
 semester_start: 2025-09-09
 semester_end: 2025-12-19
-archive:
-  date: 2027-09-01   # pinned 2026-09-10: the past demo cohort stays live for inspection
-
 releases:
 
   session-01:
@@ -111,3 +108,11 @@ releases:
 # nobody has claimed a roster row in this demonstration cohort - so a scheduled handout
 # would fail every hour with "no onboarded enrolled students". The sibling cohort
 # hertie-dsl-demo-f2026 shows the full assignment lifecycle instead.
+
+# LAST, because it is the end of the term: writing this block is what archives the cohort
+# at all - without it, nothing ever freezes.
+archive:
+  date: 2027-09-01            # optional (default: semester_end + 60 days)
+  show_on_site: true          # a "Cohort archived" row on the site's Schedule tab, notice 14 days out
+  description: >-             # optional, but ALL that row and the Updates box SAY - there is no default, so without this they say nothing
+    This cohort is archived on 2027-09-01: every repository in it becomes read-only. You keep read access, so you can still fork or clone anything you want to keep working on into your own account.
