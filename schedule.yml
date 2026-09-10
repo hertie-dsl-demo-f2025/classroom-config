@@ -8,6 +8,10 @@
 
 semester_start: 2025-09-09
 semester_end: 2025-12-19
+
+# What ships, and when. One entry per session: its `deploy:` paths land in the cohort's
+# `materials` repo at `event_datetime` (or the entry's own `deploy_datetime`), and the entry
+# is a row on the deployed site's Schedule tab unless `show_on_site: false`.
 releases:
 
   session-01:
