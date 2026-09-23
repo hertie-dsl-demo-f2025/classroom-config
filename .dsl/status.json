@@ -1,0 +1,317 @@
+{
+  "schema": "dsl.status/1",
+  "inputs": {
+    "schedule.yml": "b92f11e42dd03b2201a9e6a9bd4baf69ed4a0597",
+    "people.yml": "7f58b1f089ccfd8d0a18889f2a4a148c4ffe3ce5",
+    "students.csv": "b7fa7c2698b63d122ed427f18d231ea850e8c5e3",
+    "teams.csv": "2fcac797b5d59979ab905dafcc84e341cfe5306c",
+    "grading_sheets": "7b79915cbaec57d7ffcd43daa6b65b83a540d378",
+    "course/dsl-course.yml": "1879995901fb3d9906f9a469f3e9b7cbb1973659",
+    "assignments.lock.yml": "4440d8b60df70df401126dc0367ced1bbe4e4544"
+  },
+  "course": {
+    "org": "hertie-dsl-demo-course-e1234",
+    "name": "Deep Learning (Demo)",
+    "code": "E1234",
+    "app_installed": null,
+    "stages": {
+      "C1": "done",
+      "C2": "done",
+      "C3": "done",
+      "C4": "todo",
+      "C5": "done",
+      "C6": "done"
+    },
+    "ready": false,
+    "materials": [
+      {
+        "repo": "course-materials-f2025",
+        "state": "todo"
+      },
+      {
+        "repo": "course-materials-f2026",
+        "state": "ready"
+      }
+    ],
+    "templates": [
+      {
+        "repo": "assignment-1-f2026",
+        "slug": "assignment-1",
+        "state": "ready"
+      },
+      {
+        "repo": "assignment-2-f2026",
+        "slug": "assignment-2",
+        "state": "ready"
+      },
+      {
+        "repo": "assignment-3-project-f2026",
+        "slug": "assignment-3-project",
+        "state": "ready"
+      },
+      {
+        "repo": "assignment-4-f2026",
+        "slug": "assignment-4",
+        "state": "ready"
+      },
+      {
+        "repo": "assignment-5-f2026",
+        "slug": "assignment-5",
+        "state": "ready"
+      },
+      {
+        "repo": "assignment-6-f2026",
+        "slug": "assignment-6",
+        "state": "ready"
+      },
+      {
+        "repo": "assignment-7-f2026",
+        "slug": "assignment-7",
+        "state": "ready"
+      }
+    ],
+    "cohorts": [
+      "hertie-dsl-demo-f2025",
+      "hertie-dsl-demo-f2026"
+    ]
+  },
+  "cohort": {
+    "org": "hertie-dsl-demo-f2025",
+    "term": "f2025",
+    "term_label": "Fall 2025",
+    "timezone": "Europe/Berlin",
+    "week": 15,
+    "weeks": 15,
+    "live": true,
+    "app_installed": null,
+    "stages": {
+      "K1": "done",
+      "K2": "done",
+      "K3": "todo",
+      "K4": "done",
+      "K5": "todo",
+      "K6": "done",
+      "K7": "todo"
+    },
+    "archive_date": "2027-09-01"
+  },
+  "problems": [],
+  "this_week": [],
+  "releases": [
+    {
+      "id": "session-01",
+      "when": "2025-09-09T10:00:00+02:00",
+      "type": "lecture",
+      "title": "",
+      "state": "released",
+      "source": {
+        "repo": "course-materials-f2025",
+        "path": "lectures/01_deep-learning-in-public-policy"
+      },
+      "dest": {
+        "repo": "materials",
+        "path": "lectures/01_deep-learning-in-public-policy"
+      },
+      "copies": 3,
+      "show_on_site": true,
+      "tbc": false
+    },
+    {
+      "id": "session-02",
+      "when": "2025-09-16T10:00:00+02:00",
+      "type": "lecture",
+      "title": "",
+      "state": "released",
+      "source": {
+        "repo": "course-materials-f2025",
+        "path": "lectures/02_deep-neural-networks-1"
+      },
+      "dest": {
+        "repo": "materials",
+        "path": "lectures/02_deep-neural-networks-1"
+      },
+      "copies": 3,
+      "show_on_site": true,
+      "tbc": false
+    },
+    {
+      "id": "session-03",
+      "when": "2025-09-23T10:00:00+02:00",
+      "type": "lecture",
+      "title": "",
+      "state": "released",
+      "source": {
+        "repo": "course-materials-f2025",
+        "path": "lectures/03_deep-neural-networks-2"
+      },
+      "dest": {
+        "repo": "materials",
+        "path": "lectures/03_deep-neural-networks-2"
+      },
+      "copies": 3,
+      "show_on_site": true,
+      "tbc": false
+    },
+    {
+      "id": "session-04",
+      "when": "2025-09-30T10:00:00+02:00",
+      "type": "lecture",
+      "title": "",
+      "state": "released",
+      "source": {
+        "repo": "course-materials-f2025",
+        "path": "lectures/04_computer-vision-1-cnns"
+      },
+      "dest": {
+        "repo": "materials",
+        "path": "lectures/04_computer-vision-1-cnns"
+      },
+      "copies": 3,
+      "show_on_site": true,
+      "tbc": false
+    },
+    {
+      "id": "session-05",
+      "when": "2025-10-07T10:00:00+02:00",
+      "type": "lecture",
+      "title": "",
+      "state": "released",
+      "source": {
+        "repo": "course-materials-f2025",
+        "path": "lectures/05_computer-vision-2-modern-cnns"
+      },
+      "dest": {
+        "repo": "materials",
+        "path": "lectures/05_computer-vision-2-modern-cnns"
+      },
+      "copies": 3,
+      "show_on_site": true,
+      "tbc": false
+    },
+    {
+      "id": "session-06",
+      "when": "2025-10-14T10:00:00+02:00",
+      "type": "lecture",
+      "title": "",
+      "state": "released",
+      "source": {
+        "repo": "course-materials-f2025",
+        "path": "lectures/06_sequence-methods-and-time-series"
+      },
+      "dest": {
+        "repo": "materials",
+        "path": "lectures/06_sequence-methods-and-time-series"
+      },
+      "copies": 2,
+      "show_on_site": true,
+      "tbc": false
+    },
+    {
+      "id": "session-07",
+      "when": "2025-10-21T10:00:00+02:00",
+      "type": "lecture",
+      "title": "",
+      "state": "released",
+      "source": {
+        "repo": "course-materials-f2025",
+        "path": "lectures/07_natural-language-processing-1"
+      },
+      "dest": {
+        "repo": "materials",
+        "path": "lectures/07_natural-language-processing-1"
+      },
+      "copies": 1,
+      "show_on_site": true,
+      "tbc": false
+    },
+    {
+      "id": "session-08",
+      "when": "2025-10-28T10:00:00+01:00",
+      "type": "lecture",
+      "title": "",
+      "state": "released",
+      "source": {
+        "repo": "course-materials-f2025",
+        "path": "lectures/08_nlp-2-encoder-decoder-and-attention"
+      },
+      "dest": {
+        "repo": "materials",
+        "path": "lectures/08_nlp-2-encoder-decoder-and-attention"
+      },
+      "copies": 2,
+      "show_on_site": true,
+      "tbc": false
+    },
+    {
+      "id": "session-09",
+      "when": "2025-11-04T10:00:00+01:00",
+      "type": "lab",
+      "title": "",
+      "state": "released",
+      "source": {
+        "repo": "course-materials-f2025",
+        "path": "labs/09_further-topics"
+      },
+      "dest": {
+        "repo": "materials",
+        "path": "labs/09_further-topics"
+      },
+      "copies": 2,
+      "show_on_site": true,
+      "tbc": false
+    },
+    {
+      "id": "session-10",
+      "when": "2025-11-11T10:00:00+01:00",
+      "type": "lecture",
+      "title": "",
+      "state": "released",
+      "source": {
+        "repo": "course-materials-f2025",
+        "path": "readings/10_policy-approaches-and-responsible-implementation"
+      },
+      "dest": {
+        "repo": "materials",
+        "path": "readings/10_policy-approaches-and-responsible-implementation"
+      },
+      "copies": 1,
+      "show_on_site": true,
+      "tbc": false
+    },
+    {
+      "id": "session-11",
+      "when": "2025-11-18T10:00:00+01:00",
+      "type": "lab",
+      "title": "",
+      "state": "released",
+      "source": {
+        "repo": "course-materials-f2025",
+        "path": "labs/11_deep-learning-in-practice"
+      },
+      "dest": {
+        "repo": "materials",
+        "path": "labs/11_deep-learning-in-practice"
+      },
+      "copies": 2,
+      "show_on_site": true,
+      "tbc": false
+    }
+  ],
+  "assignments": [],
+  "students": {
+    "rows": 3,
+    "codes_sent": 0,
+    "joined": 0
+  },
+  "staff": {
+    "instructors": 0,
+    "tas": 0,
+    "synced": false
+  },
+  "site": {
+    "url": "https://hertie-dsl-demo-f2025.github.io",
+    "last_update": "2026-09-23T14:38:42+00:00",
+    "stale": false
+  },
+  "operations": []
+}
