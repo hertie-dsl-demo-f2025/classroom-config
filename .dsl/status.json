@@ -22,6 +22,9 @@
       "C5": "done",
       "C6": "done"
     },
+    "stage_why": {
+      "C4": "course-materials-f2025's SYLLABUS.md is still the placeholder."
+    },
     "ready": false,
     "materials": [
       {
@@ -92,6 +95,11 @@
       "K5": "todo",
       "K6": "done",
       "K7": "todo"
+    },
+    "stage_why": {
+      "K3": "No instructor is declared in people.yml yet.",
+      "K5": "3 students have not been sent a code yet.",
+      "K7": "Not archived yet; the schedule archives it on Wed 1 Sep."
     },
     "archive_date": "2027-09-01"
   },
