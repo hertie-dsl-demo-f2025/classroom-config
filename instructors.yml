@@ -6,9 +6,9 @@
 #
 # Defaults-only demo cohort: name and title only. No photo, no link, no start/end dates,
 # no teaching assistants - the sibling cohort hertie-dsl-demo-f2026 shows all of those.
-# For a filled example, see `people.yml.sample` next to this file.
+# For a filled example, see the worked example (https://github.com/hertie-data-science-lab/dsl-teaching-toolkit/blob/preview/example-course/semester-org/instructors.yml) next to this file.
 
-people:
-  instructors:
-    - name: "Prof. Lynn Kaack, PhD"
-      title: "Assistant Professor of Computer Science and Public Policy"
+instructors:
+  - name: "Prof. Lynn Kaack, PhD"
+    role: instructor
+    title: "Assistant Professor of Computer Science and Public Policy"
