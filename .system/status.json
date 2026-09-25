@@ -2,12 +2,12 @@
   "schema": "dsl.status/1",
   "inputs": {
     "schedule.yml": "b92f11e42dd03b2201a9e6a9bd4baf69ed4a0597",
-    "people.yml": "7f58b1f089ccfd8d0a18889f2a4a148c4ffe3ce5",
+    "instructors.yml": "72de01d7aa5045209f8dc3add47140ff79ee5d85",
     "students.csv": "b7fa7c2698b63d122ed427f18d231ea850e8c5e3",
     "teams.csv": "2fcac797b5d59979ab905dafcc84e341cfe5306c",
-    "grading_sheets": "7b79915cbaec57d7ffcd43daa6b65b83a540d378",
-    "course/dsl-course.yml": "1879995901fb3d9906f9a469f3e9b7cbb1973659",
-    "assignments.lock.yml": "4440d8b60df70df401126dc0367ced1bbe4e4544"
+    "grading_sheets": null,
+    "course/dsl-course.yml": "276278ab95afd72300e49c2a3c8a47f541ea29cc",
+    ".system/assignments.lock.yml": "9be2534b6a540ebaa7c4b8b7991718d0f1cf3971"
   },
   "course": {
     "org": "hertie-dsl-demo-course-e1234",
@@ -73,15 +73,15 @@
         "state": "ready"
       }
     ],
-    "cohorts": [
+    "semesters": [
       "hertie-dsl-demo-f2025",
       "hertie-dsl-demo-f2026"
     ]
   },
-  "cohort": {
+  "semester": {
     "org": "hertie-dsl-demo-f2025",
-    "term": "f2025",
-    "term_label": "Fall 2025",
+    "key": "f2025",
+    "label": "Fall 2025",
     "timezone": "Europe/Berlin",
     "week": 15,
     "weeks": 15,
@@ -97,7 +97,7 @@
       "K7": "todo"
     },
     "stage_why": {
-      "K3": "No instructor is declared in people.yml yet.",
+      "K3": "No instructor is declared in instructors.yml yet.",
       "K5": "3 students have not been sent a code yet.",
       "K7": "Not archived yet; the schedule archives it on Wed 1 Sep."
     },
@@ -109,7 +109,7 @@
     {
       "id": "session-01",
       "when": "2025-09-09T10:00:00+02:00",
-      "type": "lecture",
+      "kind": "lecture",
       "title": "",
       "state": "released",
       "source": {
@@ -127,7 +127,7 @@
     {
       "id": "session-02",
       "when": "2025-09-16T10:00:00+02:00",
-      "type": "lecture",
+      "kind": "lecture",
       "title": "",
       "state": "released",
       "source": {
@@ -145,7 +145,7 @@
     {
       "id": "session-03",
       "when": "2025-09-23T10:00:00+02:00",
-      "type": "lecture",
+      "kind": "lecture",
       "title": "",
       "state": "released",
       "source": {
@@ -163,7 +163,7 @@
     {
       "id": "session-04",
       "when": "2025-09-30T10:00:00+02:00",
-      "type": "lecture",
+      "kind": "lecture",
       "title": "",
       "state": "released",
       "source": {
@@ -181,7 +181,7 @@
     {
       "id": "session-05",
       "when": "2025-10-07T10:00:00+02:00",
-      "type": "lecture",
+      "kind": "lecture",
       "title": "",
       "state": "released",
       "source": {
@@ -199,7 +199,7 @@
     {
       "id": "session-06",
       "when": "2025-10-14T10:00:00+02:00",
-      "type": "lecture",
+      "kind": "lecture",
       "title": "",
       "state": "released",
       "source": {
@@ -217,7 +217,7 @@
     {
       "id": "session-07",
       "when": "2025-10-21T10:00:00+02:00",
-      "type": "lecture",
+      "kind": "lecture",
       "title": "",
       "state": "released",
       "source": {
@@ -235,7 +235,7 @@
     {
       "id": "session-08",
       "when": "2025-10-28T10:00:00+01:00",
-      "type": "lecture",
+      "kind": "lecture",
       "title": "",
       "state": "released",
       "source": {
@@ -253,7 +253,7 @@
     {
       "id": "session-09",
       "when": "2025-11-04T10:00:00+01:00",
-      "type": "lab",
+      "kind": "lab",
       "title": "",
       "state": "released",
       "source": {
@@ -271,7 +271,7 @@
     {
       "id": "session-10",
       "when": "2025-11-11T10:00:00+01:00",
-      "type": "lecture",
+      "kind": "lecture",
       "title": "",
       "state": "released",
       "source": {
@@ -289,7 +289,7 @@
     {
       "id": "session-11",
       "when": "2025-11-18T10:00:00+01:00",
-      "type": "lab",
+      "kind": "lab",
       "title": "",
       "state": "released",
       "source": {
@@ -319,7 +319,7 @@
   "site": {
     "url": "https://hertie-dsl-demo-f2025.github.io",
     "last_update": "2026-09-23T14:38:42+00:00",
-    "stale": false
+    "stale": true
   },
   "operations": []
 }
