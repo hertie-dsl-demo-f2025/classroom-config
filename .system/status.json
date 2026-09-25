@@ -19,11 +19,12 @@
       "C2": "done",
       "C3": "done",
       "C4": "todo",
-      "C5": "done",
+      "C5": "problem",
       "C6": "done"
     },
     "stage_why": {
-      "C4": "course-materials-f2025's SYLLABUS.md is still the placeholder."
+      "C4": "course-materials-f2025's SYLLABUS.md is still the placeholder.",
+      "C5": "7 problems need fixing."
     },
     "ready": false,
     "materials": [
@@ -40,37 +41,37 @@
       {
         "repo": "assignment-1-f2026",
         "slug": "assignment-1",
-        "state": "ready"
+        "state": "problem"
       },
       {
         "repo": "assignment-2-f2026",
         "slug": "assignment-2",
-        "state": "ready"
+        "state": "problem"
       },
       {
         "repo": "assignment-3-project-f2026",
         "slug": "assignment-3-project",
-        "state": "ready"
+        "state": "problem"
       },
       {
         "repo": "assignment-4-f2026",
         "slug": "assignment-4",
-        "state": "ready"
+        "state": "problem"
       },
       {
         "repo": "assignment-5-f2026",
         "slug": "assignment-5",
-        "state": "ready"
+        "state": "problem"
       },
       {
         "repo": "assignment-6-f2026",
         "slug": "assignment-6",
-        "state": "ready"
+        "state": "problem"
       },
       {
         "repo": "assignment-7-f2026",
         "slug": "assignment-7",
-        "state": "ready"
+        "state": "problem"
       }
     ],
     "semesters": [
