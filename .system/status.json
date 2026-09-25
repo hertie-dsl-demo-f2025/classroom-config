@@ -1,12 +1,12 @@
 {
   "schema": "dsl.status/1",
   "inputs": {
-    "schedule.yml": "b92f11e42dd03b2201a9e6a9bd4baf69ed4a0597",
-    "instructors.yml": "72de01d7aa5045209f8dc3add47140ff79ee5d85",
+    "schedule.yml": "d45558ab610ccb5fc3da2003524d608b4baac624",
+    "instructors.yml": "d55119f022a5812d287fae6f82c14c5e473cde21",
     "students.csv": "b7fa7c2698b63d122ed427f18d231ea850e8c5e3",
     "teams.csv": "2fcac797b5d59979ab905dafcc84e341cfe5306c",
     "grading_sheets": null,
-    "course/dsl-course.yml": "276278ab95afd72300e49c2a3c8a47f541ea29cc",
+    "course/dsl-course.yml": "86d28f5d8e8d618056e050bdaa028a7b464a935b",
     ".system/assignments.lock.yml": "9be2534b6a540ebaa7c4b8b7991718d0f1cf3971"
   },
   "course": {
@@ -19,12 +19,11 @@
       "C2": "done",
       "C3": "done",
       "C4": "todo",
-      "C5": "problem",
+      "C5": "done",
       "C6": "done"
     },
     "stage_why": {
-      "C4": "course-materials-f2025's SYLLABUS.md is still the placeholder.",
-      "C5": "7 problems need fixing."
+      "C4": "course-materials-f2025's SYLLABUS.md is still the placeholder."
     },
     "ready": false,
     "materials": [
@@ -41,37 +40,37 @@
       {
         "repo": "assignment-1-f2026",
         "slug": "assignment-1",
-        "state": "problem"
+        "state": "ready"
       },
       {
         "repo": "assignment-2-f2026",
         "slug": "assignment-2",
-        "state": "problem"
+        "state": "ready"
       },
       {
         "repo": "assignment-3-project-f2026",
         "slug": "assignment-3-project",
-        "state": "problem"
+        "state": "ready"
       },
       {
         "repo": "assignment-4-f2026",
         "slug": "assignment-4",
-        "state": "problem"
+        "state": "ready"
       },
       {
         "repo": "assignment-5-f2026",
         "slug": "assignment-5",
-        "state": "problem"
+        "state": "ready"
       },
       {
         "repo": "assignment-6-f2026",
         "slug": "assignment-6",
-        "state": "problem"
+        "state": "ready"
       },
       {
         "repo": "assignment-7-f2026",
         "slug": "assignment-7",
-        "state": "problem"
+        "state": "ready"
       }
     ],
     "semesters": [
@@ -320,7 +319,7 @@
   "site": {
     "url": "https://hertie-dsl-demo-f2025.github.io",
     "last_update": "2026-09-25T10:43:28+00:00",
-    "stale": false
+    "stale": true
   },
   "operations": []
 }
